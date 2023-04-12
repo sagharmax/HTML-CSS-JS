@@ -55,5 +55,16 @@ footer.sample-copy {
     /* display: none; */
     display: inline-block;
     border: 1px solid black;
-    width: 30%;
+    border-color: red;
+    border-width: 5px;
+    border-style: dotted;
+    width: 25%;
+    min-width: 100px;
+    /* padding: 15px; */
+    padding-left: 15px;
+    margin: 10px 5px 10px 0;
+}
+
+.ninja.better {
+    min-height: 300px;
 }
