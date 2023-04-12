@@ -1,9 +1,9 @@
-body {
+html {
     font-size: 18px;
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 2rem;
 }
 
 /* #first-character {
@@ -11,7 +11,7 @@ h1 {
 } */
 
 .starting-character {
-    font-size: 50px;
+    font-size: 3rem;
 }
 
 .starting-character.first-overall-character {
@@ -19,7 +19,7 @@ h1 {
 }
 
 .sample-copy {
-    font-size: 24px;
+    font-size: 1.25rem;
 }
 
 footer.sample-copy {
