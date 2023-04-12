@@ -36,6 +36,7 @@ p, div {
 
 .sample-copy {
     font-size: 1.25rem;
+    display: flow-root;
 }
 
 footer.sample-copy {
@@ -67,4 +68,9 @@ footer.sample-copy {
 
 .ninja.better {
     min-height: 300px;
+}
+
+#sam-on-couch-img {
+    width: 30%;
+    float: right;
 }
