@@ -6,11 +6,18 @@ html {
     font-family: 'Roboto', Arial, sans-serif;
     line-height: 1.5rem;
     /* font: italic bold 16px/24px Roboto; */
+    text-align: left;
 }
 
 h1 {
     font-size: 2rem;
     font-family: 'Zen Dots', cursive;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+p {
+    text-indent: 2rem;
 }
 
 /* #first-character {
@@ -23,7 +30,8 @@ h1 {
 }
 
 .starting-character.first-overall-character {
-    color: red;
+    /* color: rgba(20, 20, 164, 0.557); */
+    color: #4fc542;
 }
 
 .sample-copy {
@@ -33,4 +41,11 @@ h1 {
 footer.sample-copy {
     color: red;
     font-style: italic;
+}
+
+.key-info {
+    text-decoration-line: underline;
+    text-decoration-color: rgb(215, 70, 70);
+    text-decoration-style: wavy;
+    /* text-decoration: underline rgb(215, 70, 70) wavy; */
 }
