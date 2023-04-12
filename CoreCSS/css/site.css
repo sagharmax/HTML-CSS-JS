@@ -16,7 +16,7 @@ h1 {
     text-transform: capitalize;
 }
 
-p {
+p, div {
     text-indent: 2rem;
 }
 
@@ -48,4 +48,12 @@ footer.sample-copy {
     text-decoration-color: rgb(215, 70, 70);
     text-decoration-style: wavy;
     /* text-decoration: underline rgb(215, 70, 70) wavy; */
+}
+
+.ninja {
+    /* visibility: hidden; */
+    /* display: none; */
+    display: inline-block;
+    border: 1px solid black;
+    width: 30%;
 }
