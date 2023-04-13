@@ -1,27 +1,22 @@
-// let x = 1;
-// let y = 2;
-// let result = 5;
-// result = x + y;
-// result += x;
-// result++;
-// + - / *
-// result *= 2;
-// result /= 4;
-// result -= 2;
-// console.log(result);
-
-
-// let isAlive = true;
-// isAlive = false;
-// console.log(!isAlive);
-// console.log(isAlive);
-
-
-// let birthday = new Date(1984, 4, 4, 0, 0, 0, 0);
-// console.log(birthday.getMonth() + 2);
-
-
-const firstName = 'Saeid';
-const lastName = 'Ghasemi';
-// console.log(firstName + ' ' + lastName);
-console.log(`${firstName} ${lastName}`);
+const people = ['Saeid', 'Mohaddeseh', 'Sepanta', 'Shakila'];
+people.push('Tamay');
+const lastPerson = people.pop()
+console.log(people);
+console.log(people.indexOf('Shakila'));
+console.log(people.indexOf('Tamay'));
+console.log(Array.isArray(people));
+console.log(Array.isArray(lastPerson));
+console.log(lastPerson.startsWith('Ta'));
+people.push('Bahman');
+people.push('Ferina');
+people.push('Naeimeh');
+const coolPeople = people.filter(function(person) {
+    return person.startsWith('S') === true;
+})
+console.log(coolPeople);
+console.log(people);
+console.log(lastPerson.substring(0, 3));
+const firstLetters = people.map(function(person) {
+    return person.substring(0, 1);
+});
+console.log(firstLetters);
