@@ -1,22 +1,27 @@
-// var testString = 'This is a test';
-let testString = 'This is a test';
-const testNumber = 45.87;
-const testBoolean = true;
-// const testconst;
-testString = 'This is a better test';
-console.log(testString);
+// let x = 1;
+// let y = 2;
+// let result = 5;
+// result = x + y;
+// result += x;
+// result++;
+// + - / *
+// result *= 2;
+// result /= 4;
+// result -= 2;
+// console.log(result);
 
-/*
-i = 10;
-i = 5;
-console.log(i);
-var i = 2;
-*/
 
-/*
-j = 10;
-j = 5;
-console.log(j);
-let j = 2;
-*/
+// let isAlive = true;
+// isAlive = false;
+// console.log(!isAlive);
+// console.log(isAlive);
 
+
+// let birthday = new Date(1984, 4, 4, 0, 0, 0, 0);
+// console.log(birthday.getMonth() + 2);
+
+
+const firstName = 'Saeid';
+const lastName = 'Ghasemi';
+// console.log(firstName + ' ' + lastName);
+console.log(`${firstName} ${lastName}`);
