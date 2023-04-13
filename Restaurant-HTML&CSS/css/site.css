@@ -100,3 +100,17 @@ footer {
     padding-left: .67rem;
     padding-right: .67rem;
 }
+
+.food-menu {
+    text-align: center;
+
+}
+
+.food-items {
+    list-style-type: none;
+}
+
+.food-items li {
+    text-indent: -1rem;
+    margin-bottom: 2rem;
+}
