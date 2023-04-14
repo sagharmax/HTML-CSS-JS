@@ -30,34 +30,37 @@
             </div>
         </main>
         <script>
-            // const p = document.getElementById('first-paragraph');
-            // p.innerText = 'This is a test';
+            // const section = document.getElementById('list-section');
+            // const list = section.querySelector('ul');
+            // const items = list.children;
+            // for (let i = 0; i < items.length; i++) {
+            //     console.log(items[i]);
+            // }
+            // console.log(items);
+            // const itemsArray = Array.from(items);
+            // itemsArray.forEach(element => console.log(element));
+            // console.log(itemsArray);
 
-            // const list = document.querySelector('ul');
-            // list.innerHTML = '<li>test 1</li><li>test 2</li>'
+            // const section = document.getElementById('key-items');
+            // const parent = section.parentElement;
+            // const mainElement = section.closest('main');
+            // console.log(parent);
+            // console.log(mainElement);
 
-            // const p2 = document.querySelector('.support-paragraph');
-            // p2.remove();
+            // const listItem = document.querySelector('li');
+            // nextElementSibling, previousElementSibling
+            // const nextItem = listItem.nextElementSibling;
+            // console.log(nextItem);
+            // const finalItem = nextItem.nextElementSibling;
+            // console.log(finalItem);
+            // const unknownItem = finalItem.nextElementSibling;
+            // console.log(unknownItem);
 
-            // const headingItem = document.querySelector('h1');
-            // headingItem.style.color = 'red';
-            // headingItem.style.fontSize = '1.25rem';
-
-            // const p1 = document.querySelector('p');
-            // p1.classList.add('dark-mode');
-
-            // const paragraphs = document.querySelectorAll('p');
-            // paragraphs.forEach(element => {
-            //     element.classList.remove('support-paragraph');
-            //     element.classList.add('dark-mode');
-            // })
-
-            const paragraphs = document.querySelectorAll('p');
-            paragraphs.forEach(element => {
-                if (element.classList.contains('support-paragraph')) {
-                    element.classList.add('dark-mode');
-                }
-            });
+            let listItem = document.querySelector('li');
+            while (listItem !== null) {
+                console.log(listItem);
+                listItem = listItem.nextElementSibling;
+            }
         </script>
     </body>
 </html>
