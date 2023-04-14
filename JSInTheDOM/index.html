@@ -28,39 +28,33 @@
                     <li>Our Third LI</li>
                 </ul>
             </div>
+            <div>
+                <ul id="good-foods">
+                    
+                </ul>
+            </div>
         </main>
         <script>
-            // const section = document.getElementById('list-section');
-            // const list = section.querySelector('ul');
-            // const items = list.children;
-            // for (let i = 0; i < items.length; i++) {
-            //     console.log(items[i]);
-            // }
-            // console.log(items);
-            // const itemsArray = Array.from(items);
-            // itemsArray.forEach(element => console.log(element));
-            // console.log(itemsArray);
+            // const list = document.getElementById('key-items');
+            // list.innerHTML += '<li>Our First LI</li>'
 
-            // const section = document.getElementById('key-items');
-            // const parent = section.parentElement;
-            // const mainElement = section.closest('main');
-            // console.log(parent);
-            // console.log(mainElement);
+            const foods = ['Hamburgers', 'Hot Dogs', 'Pasta', 'Bread'];
+            const foodList = document.getElementById('good-foods');
+            // foods.forEach(food => {
+                // foodList.innerHTML += `<li>${food}</li>`; // Slow way
 
-            // const listItem = document.querySelector('li');
-            // nextElementSibling, previousElementSibling
-            // const nextItem = listItem.nextElementSibling;
-            // console.log(nextItem);
-            // const finalItem = nextItem.nextElementSibling;
-            // console.log(finalItem);
-            // const unknownItem = finalItem.nextElementSibling;
-            // console.log(unknownItem);
+                // const element = document.createElement('li'); // Better way
+                // element.innerText = food;
+                // foodList.appendChild(element);
+            // })
 
-            let listItem = document.querySelector('li');
-            while (listItem !== null) {
-                console.log(listItem);
-                listItem = listItem.nextElementSibling;
-            }
+            const fragment = new DocumentFragment(); // Most efficient way
+            foods.forEach(food => {
+                const element = document.createElement('li');
+                element.innerText = food;
+                fragment.appendChild(element);
+            });
+            foodList.appendChild(fragment);
         </script>
     </body>
 </html>
