@@ -1,28 +1,27 @@
-var a = 4;
-function testing() {
-    var a = 5;
-    console.log(`Inside testing(): ${a}`);
-}
-testing();
-console.log(`global: ${a}`);
+'use strict';
+
+// let myTest = 2;
+// mytest = 3;
+// console.log(myTest);
 
 
-var b = 4;
-if (true) {
-    var b = 5
-}
-console.log(b);
+// 'tset'.myInfo = 'Hello';
+// console.log('test'.myInfo);
 
 
-let c = 4;
-if (true) {
-    let c = 5
-}
-console.log(c);
+// function add(x, x) {
+//     return x + x;
+// }
+// console.log(add(5, 4));
 
 
-const d = 4;
-if (true) {
-    const d = 5
-}
-console.log(d);
+// function test() {
+//     'use strict';
+//     test1 = 2
+// }
+// test()
+
+
+// (function(app) {
+//     'use strict';
+// })();
