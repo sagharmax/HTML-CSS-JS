@@ -30,44 +30,34 @@
             </div>
         </main>
         <script>
-            // DOM, window, document
+            // const p = document.getElementById('first-paragraph');
+            // p.innerText = 'This is a test';
 
-            // Selecting by Id
-            let demo = document.getElementById('key-items');
-            console.log(demo);
-            demo = document.querySelector('#third-paragraph');
-            console.log(demo);
+            // const list = document.querySelector('ul');
+            // list.innerHTML = '<li>test 1</li><li>test 2</li>'
 
-            // Selecting by Class
-            let p = document.querySelector('.support-paragraph');
-            console.log(p);
+            // const p2 = document.querySelector('.support-paragraph');
+            // p2.remove();
 
-            // Selecting by Element Type
-            p = document.querySelector('p');
-            console.log(p);
+            // const headingItem = document.querySelector('h1');
+            // headingItem.style.color = 'red';
+            // headingItem.style.fontSize = '1.25rem';
 
-            let li = document.querySelector('li');
-            console.log(li);
+            // const p1 = document.querySelector('p');
+            // p1.classList.add('dark-mode');
 
-            let element = document.querySelector('div');
-            console.log(element);
+            // const paragraphs = document.querySelectorAll('p');
+            // paragraphs.forEach(element => {
+            //     element.classList.remove('support-paragraph');
+            //     element.classList.add('dark-mode');
+            // })
 
-            element = document.querySelector('div ul');
-            console.log(element);
-
-            element = document.querySelector('div ul li');
-            console.log(element);
-
-            let q = document.querySelectorAll('p');
-            console.log(q);
-            q.forEach(element => {
-                console.log(element);
+            const paragraphs = document.querySelectorAll('p');
+            paragraphs.forEach(element => {
+                if (element.classList.contains('support-paragraph')) {
+                    element.classList.add('dark-mode');
+                }
             });
-            
-            q = document.querySelectorAll('.support-paragraph');
-            q.forEach(element => {
-                console.log(element);
-            })
         </script>
     </body>
 </html>
