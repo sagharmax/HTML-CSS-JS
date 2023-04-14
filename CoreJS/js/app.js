@@ -1,35 +1,55 @@
-function add(x = 2, y = 6) {
-    return x + y;
+const person = {
+    firstName: 'Saeid',
+    lastName: 'Ghasemi',
+    age: 39,
+    isAlive: true,
+    address: {
+        city: 'Urmia',
+        country: 'Iran'
+    },
+    fullName: function() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+};
+console.log(person);
+console.log(person.firstName);
+console.log(person.lastName);
+console.log(person.age);
+console.log(person.isAlive);
+console.log(person.address.city);
+console.log(person.address.country);
+person.address.country = 'Turkey';
+console.log(person.address.country);
+console.log(person.fullName());
+
+
+function greetUser(p) {
+    console.log(`Hello ${p.fullName()}`);
 }
-let result = add(2, 3);
-console.log(result);
-result = add(4, 5);
-console.log(result);
-console.log(add(2, 3));
-const moreResult = add(3, 8) + add (2, 11);
-console.log(moreResult);
-console.log(add(5));
+greetUser(person)
 
 
-function greetUser() {
-    console.log('Hello User');
-    console.log('Welcome to our website.');
-    console.log('We hope you enjoy it.');
-    console.log(`The value of 5 + 3 = ${add(5, 3)}`);
+// Deconstructor
+const { firstName:fn, age, address: {city} } = person;
+// const fn = person.firstName;
+// const age = person.age;
+// const city = person.address.city;
+// console.log(firstName);
+console.log(age);
+console.log(city);
+console.log(fn);
+
+
+for (const prop in person) {
+    console.log(prop);
+    console.log(`${prop}: ${person[prop]}`);
+    if (person.hasOwnProperty(prop)) {
+        console.log(`${prop}: ${person[prop]}`);
+    }
 }
-greetUser()
-
-
-/*
-const subtract = (x, y) => {
-    return x - y;
-}
-*/
-const subtract = (x, y) => x - y;
-console.log(subtract(9, 3));
-const people = ['Saeid', 'Mohaddeseh', 'Sepanta'];
-//const filtered = people.filter(p => p.substring(0, 1) === 'S');
-const filtered = people.filter(function(p) {
-    return p.substring(0, 1) === 'S';
-})
-console.log(filtered);
+delete person.fullName;
+// console.log(person.fullName());
+// console.log(JSON.stringify(person));
+const recivedInfo = JSON.stringify(person);
+const parsedInfo = JSON.parse(recivedInfo);
+console.log(parsedInfo.firstName);
