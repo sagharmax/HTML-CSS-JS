@@ -31,7 +31,43 @@
         </main>
         <script>
             // DOM, window, document
-            window.document
+
+            // Selecting by Id
+            let demo = document.getElementById('key-items');
+            console.log(demo);
+            demo = document.querySelector('#third-paragraph');
+            console.log(demo);
+
+            // Selecting by Class
+            let p = document.querySelector('.support-paragraph');
+            console.log(p);
+
+            // Selecting by Element Type
+            p = document.querySelector('p');
+            console.log(p);
+
+            let li = document.querySelector('li');
+            console.log(li);
+
+            let element = document.querySelector('div');
+            console.log(element);
+
+            element = document.querySelector('div ul');
+            console.log(element);
+
+            element = document.querySelector('div ul li');
+            console.log(element);
+
+            let q = document.querySelectorAll('p');
+            console.log(q);
+            q.forEach(element => {
+                console.log(element);
+            });
+            
+            q = document.querySelectorAll('.support-paragraph');
+            q.forEach(element => {
+                console.log(element);
+            })
         </script>
     </body>
 </html>
