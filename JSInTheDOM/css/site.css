@@ -1,12 +1,8 @@
-.support-paragraph {
-    font-size:  .75rem;
+.completed-task {
+    text-decoration: line-through;
 }
 
-.dark-mode {
-    color: #fff;
-    background-color: #000;
-}
-
-.new-item {
-    text-shadow: 1px 1px 2px #525252;
+ul {
+    list-style-type: none;
+    line-height: 1.5rem;
 }
