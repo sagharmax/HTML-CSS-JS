@@ -8,99 +8,52 @@
     </head>
     <body>
         <main>
-            <h1>Welcome to the DOM Demo</h1>
-            <!-- <p id="first-paragraph">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur culpa 
-                delectus hic fuga voluptatibus commodi aspernatur eaque vero, aut deserunt.
-            </p>
-            <p id="second-paragraph" class="support-paragraph">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus et, 
-                accusantium fugiat voluptatibus culpa architecto?
-            </p>
-            <p id="third-paragraph" class="support-paragraph">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt distinctio porro 
-                vero accusantium impedit laborum blanditiis ratione vitae provident autem.
-            </p> -->
+            <h1>DOM Demo</h1>
+            <form action="" method="post">
+                <div>
+                    <label for="fullName">Full Name: </label>
+                    <input id="fullName" type="text" name="fullName" required>
+                </div>
+                <div>
+                    <label for="guest">Number of Guests: </label>
+                    <input id="guests" type="number" name="guests" required>
+                </div>
+                <div>
+                    <button id="submit" type="submit">Submit</button>
+                    <button id="reset" type="reset">Reset</button>
+                </div>
+            </form>
             <div id="list-section">
-                <a id="add-to-list" href="#">Add New Element To List</a>
-                <ul id="key-items">
-                    <li>Our First LI</li>
-                    <li>Our Second LI</li>
-                    <li>Our Third LI</li>
+                <h2>Guestbook Entries</h2>
+                <small>Total Guests: <span id="totalGuests">0</span></small>
+                <ul id="items">
+
                 </ul>
-            </div>
-            <div>
-                <h2 id="display-message">Send Email Demo</h2>
-                <p id="status-message"></p>
-                <a id="send-email" href="#">Send Email with Mistake</a><br>
-                <a id="recall-email" href="#">Recall Email</a>
             </div>
         </main>
         <script>
             'use strict';
 
-            const list = document.getElementById('key-items');
-            let i = 4;
-            const addAction = document.getElementById('add-to-list');
-            const displayMessage = document.getElementById('display-message');
-            let timeoutId = 0;
-            const sendEmailAnchor = document.getElementById('send-email');
-            const cancelEmailAnchor = document.getElementById('recall-email');
-            const statusMessage = document.getElementById('status-message');
-            let countDown = 10;
+            const submitButton = document.getElementById('submit');
+            const fullName = document.getElementById('fullName');
+            const list = document.getElementById('items');
+            const guestsValue = document.getElementById('guests');
+            const totalGuestsSection = document.getElementById('totalGuests');
+            let totalGuestsCount = 0;
 
-            sendEmailAnchor.addEventListener('click', sendEmail);
-            cancelEmailAnchor.addEventListener('click', cancelEmail);
+            submitButton.addEventListener('click', submitAction);
 
-            // addAction.addEventListener('click', (e) => {
-            //     e.preventDefault();
-            //     const fragment = new DocumentFragment()
-            //     const li = document.createElement('li');
-            //     li.innerText = `LI From anchor tag #${i}`;
-            //     li.classList.add('new-item');
-            //     i++;
-            //     fragment.appendChild(li);
-            //     list.appendChild(fragment);
-            //     setTimeout(removeNewItemClass, 2000, li);
-            // });
-
-            // function removeNewItemClass(item) {
-            //     // const items = list.querySelectorAll('.new-item');
-            //     // const itemsArray = Array.from(items);
-            //     // itemsArray.forEach(element => element.classList.remove('new-item'));
-            //     item.classList.remove('new-item');
-            // }
-
-            function sendEmail(e) {
+            function submitAction(e) {
                 e.preventDefault();
-                timeoutId = setTimeout(countDownToSend);
-            }
+                const li = document.createElement('li');
+                li.innerText = fullName.value;
+                list.appendChild(li);
+                fullName.value = '';
 
-            function countDownToSend() {
-                if (countDown > 0) {
-                    statusMessage.innerText = `Email will send in ${countDown} seconds...`;
-                    timeoutId = setTimeout(countDownToSend, 1000);
-                    countDown--;
-                } else {
-                    actuallSendEmail();
-                    countDown = 10;
-                }
-            }
-
-            function cancelEmail(e) {
-                e.preventDefault();
-                clearTimeout(timeoutId);
-                cancelSendEmail();
-            }
-
-            function actuallSendEmail() {
-                displayMessage.innerText = 'The email has been sent!!!!!';
-                statusMessage.innerText = '';
-            }
-
-            function cancelSendEmail() {
-                displayMessage.innerText = 'The email has been recalled!';
-                statusMessage.innerText = '';
+                // totalGuestsCount += Number(guestsValue.value);
+                totalGuestsCount += guestsValue.valueAsNumber; // HTML5
+                totalGuestsSection.innerText = totalGuestsCount;
+                guestsValue.value = 0;
             }
         </script>
     </body>
