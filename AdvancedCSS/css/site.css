@@ -1,0 +1,62 @@
+/* Setup CSS */
+#first-div {
+    background-color: blue;
+    color: white;
+    height: 100px;
+    width: auto;
+}
+
+#second-div {
+    background-color: red;
+    color: white;
+    height: 100px;
+    width: auto;
+}
+
+#third-div {
+    background-color: green;
+    color: white;
+    height: 100px;
+    width: auto;
+    z-index: 50;
+}
+
+#forth-div {
+    background-color: violet;
+    color: white;
+    height: 100px;
+    width: auto;
+    z-index: 25;
+}
+
+#inner-div {
+    background-color: gray;
+    height: 25px;
+    width: 25px;
+}
+
+/* Positioning CSS */
+.relative {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    /* left: 50%;
+    transform: translate(-50%); */
+}
+
+.absolute {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.fixed {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+}
