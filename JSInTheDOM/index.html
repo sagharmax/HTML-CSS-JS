@@ -29,55 +29,78 @@
                     <li>Our Third LI</li>
                 </ul>
             </div>
+            <div>
+                <h2 id="display-message">Send Email Demo</h2>
+                <p id="status-message"></p>
+                <a id="send-email" href="#">Send Email with Mistake</a><br>
+                <a id="recall-email" href="#">Recall Email</a>
+            </div>
         </main>
         <script>
             'use strict';
-            const mainElement = document.querySelector('main');
+
             const list = document.getElementById('key-items');
             let i = 4;
-
-            // mainElement.addEventListener('click', addLi);
-            // mmainHeading.addEventListener('click', addLiFromH1);
-            // function addLi(e) {
-            //     const fragment = new DocumentFragment()
-            //     const li = document.createElement('li');
-            //     li.innerText = `LI #${i}`;
-            //     i++;
-            //     fragment.appendChild(li);
-            //     list.appendChild(fragment);
-            // }
-
-            // const mmainHeading = document.querySelector('h1');
-            // function addLiFromH1(e) {
-            //     e.stopPropagation();
-            //     const fragment = new DocumentFragment()
-            //     const li = document.createElement('li');
-            //     li.innerText = `LI From H1 #${i}`;
-            //     i++;
-            //     fragment.appendChild(li);
-            //     list.appendChild(fragment);
-            // }
-
             const addAction = document.getElementById('add-to-list');
+            const displayMessage = document.getElementById('display-message');
+            let timeoutId = 0;
+            const sendEmailAnchor = document.getElementById('send-email');
+            const cancelEmailAnchor = document.getElementById('recall-email');
+            const statusMessage = document.getElementById('status-message');
+            let countDown = 10;
+
+            sendEmailAnchor.addEventListener('click', sendEmail);
+            cancelEmailAnchor.addEventListener('click', cancelEmail);
+
             // addAction.addEventListener('click', (e) => {
             //     e.preventDefault();
             //     const fragment = new DocumentFragment()
             //     const li = document.createElement('li');
             //     li.innerText = `LI From anchor tag #${i}`;
+            //     li.classList.add('new-item');
             //     i++;
             //     fragment.appendChild(li);
             //     list.appendChild(fragment);
+            //     setTimeout(removeNewItemClass, 2000, li);
             // });
-            addAction.addEventListener('click', addFromLink);
-            function addFromLink(e) {
+
+            // function removeNewItemClass(item) {
+            //     // const items = list.querySelectorAll('.new-item');
+            //     // const itemsArray = Array.from(items);
+            //     // itemsArray.forEach(element => element.classList.remove('new-item'));
+            //     item.classList.remove('new-item');
+            // }
+
+            function sendEmail(e) {
                 e.preventDefault();
-                const fragment = new DocumentFragment()
-                const li = document.createElement('li');
-                li.innerText = `LI From anchor tag #${i}`;
-                i++;
-                fragment.appendChild(li);
-                list.appendChild(fragment);
-                addAction.removeEventListener('click', addFromLink);
+                timeoutId = setTimeout(countDownToSend);
+            }
+
+            function countDownToSend() {
+                if (countDown > 0) {
+                    statusMessage.innerText = `Email will send in ${countDown} seconds...`;
+                    timeoutId = setTimeout(countDownToSend, 1000);
+                    countDown--;
+                } else {
+                    actuallSendEmail();
+                    countDown = 10;
+                }
+            }
+
+            function cancelEmail(e) {
+                e.preventDefault();
+                clearTimeout(timeoutId);
+                cancelSendEmail();
+            }
+
+            function actuallSendEmail() {
+                displayMessage.innerText = 'The email has been sent!!!!!';
+                statusMessage.innerText = '';
+            }
+
+            function cancelSendEmail() {
+                displayMessage.innerText = 'The email has been recalled!';
+                statusMessage.innerText = '';
             }
         </script>
     </body>
