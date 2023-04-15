@@ -9,7 +9,7 @@
     <body>
         <main>
             <h1>Welcome to the DOM Demo</h1>
-            <p id="first-paragraph">
+            <!-- <p id="first-paragraph">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur culpa 
                 delectus hic fuga voluptatibus commodi aspernatur eaque vero, aut deserunt.
             </p>
@@ -20,41 +20,65 @@
             <p id="third-paragraph" class="support-paragraph">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt distinctio porro 
                 vero accusantium impedit laborum blanditiis ratione vitae provident autem.
-            </p>
+            </p> -->
             <div id="list-section">
+                <a id="add-to-list" href="#">Add New Element To List</a>
                 <ul id="key-items">
                     <li>Our First LI</li>
                     <li>Our Second LI</li>
                     <li>Our Third LI</li>
                 </ul>
             </div>
-            <div>
-                <ul id="good-foods">
-                    
-                </ul>
-            </div>
         </main>
         <script>
-            // const list = document.getElementById('key-items');
-            // list.innerHTML += '<li>Our First LI</li>'
+            'use strict';
+            const mainElement = document.querySelector('main');
+            const list = document.getElementById('key-items');
+            let i = 4;
 
-            const foods = ['Hamburgers', 'Hot Dogs', 'Pasta', 'Bread'];
-            const foodList = document.getElementById('good-foods');
-            // foods.forEach(food => {
-                // foodList.innerHTML += `<li>${food}</li>`; // Slow way
+            // mainElement.addEventListener('click', addLi);
+            // mmainHeading.addEventListener('click', addLiFromH1);
+            // function addLi(e) {
+            //     const fragment = new DocumentFragment()
+            //     const li = document.createElement('li');
+            //     li.innerText = `LI #${i}`;
+            //     i++;
+            //     fragment.appendChild(li);
+            //     list.appendChild(fragment);
+            // }
 
-                // const element = document.createElement('li'); // Better way
-                // element.innerText = food;
-                // foodList.appendChild(element);
-            // })
+            // const mmainHeading = document.querySelector('h1');
+            // function addLiFromH1(e) {
+            //     e.stopPropagation();
+            //     const fragment = new DocumentFragment()
+            //     const li = document.createElement('li');
+            //     li.innerText = `LI From H1 #${i}`;
+            //     i++;
+            //     fragment.appendChild(li);
+            //     list.appendChild(fragment);
+            // }
 
-            const fragment = new DocumentFragment(); // Most efficient way
-            foods.forEach(food => {
-                const element = document.createElement('li');
-                element.innerText = food;
-                fragment.appendChild(element);
-            });
-            foodList.appendChild(fragment);
+            const addAction = document.getElementById('add-to-list');
+            // addAction.addEventListener('click', (e) => {
+            //     e.preventDefault();
+            //     const fragment = new DocumentFragment()
+            //     const li = document.createElement('li');
+            //     li.innerText = `LI From anchor tag #${i}`;
+            //     i++;
+            //     fragment.appendChild(li);
+            //     list.appendChild(fragment);
+            // });
+            addAction.addEventListener('click', addFromLink);
+            function addFromLink(e) {
+                e.preventDefault();
+                const fragment = new DocumentFragment()
+                const li = document.createElement('li');
+                li.innerText = `LI From anchor tag #${i}`;
+                i++;
+                fragment.appendChild(li);
+                list.appendChild(fragment);
+                addAction.removeEventListener('click', addFromLink);
+            }
         </script>
     </body>
 </html>
