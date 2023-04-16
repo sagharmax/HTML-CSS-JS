@@ -1,51 +1,85 @@
-html {
-    color: black;
-    background-color: white;
-    font-size: 18px;
+.info {
+    background-color: red;
+    font-size: 4rem;
+    color: white;
+    text-align: center;
+    border: 1px black solid;
 }
 
-.size-heading {
-    font-size: 54px;
-    display: none;
+.main-info {
+    background-color: blue;
+    font-size: 4rem;
+    color: white;
+    text-align: center;
+    border: 1px black solid;
 }
 
-@media screen and (prefers-color-scheme: dark) {
-    html {
-        color: white;
-        background-color: black;
+/* .info-container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+} */
+
+.info-container {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 100px 1fr 100px;
+    grid-template-areas: 
+    'left1 main right1'
+    'left2 main right2'
+    'left3 main right3';
+}
+
+#imain {
+    grid-area: main;
+}
+
+#i1 {
+    grid-area: left1;
+}
+
+#i2 {
+    grid-area: left2;
+}
+
+#i3 {
+    grid-area: left3;
+}
+
+#i4 {
+    grid-area: right1;
+}
+
+#i5 {
+    grid-area: right2;
+}
+
+#i6 {
+    grid-area: right3;
+}
+
+@media screen and (max-width: 1000px) {
+    .info-container {
+        grid-template-columns: 1fr 100px;
+        grid-template-areas: 
+        'main left1'
+        'main left2'
+        'main left3'
+        'main right1'
+        'main right2'
+        'main right3';
     }
 }
 
 @media screen and (max-width: 600px) {
-    html {
-        font-size: 24px;
-    }
-
-    #size1 {
-        display: block;
-    }
-}
-
-@media screen and (min-width: 601px) and (max-width: 767px){
-    #size2 {
-        display: block;
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px){
-    #size3 {
-        display: block;
-    }
-}
-
-@media screen and (min-width: 992px) and (max-width: 1199px){
-    #size4 {
-        display: block;
-    }
-}
-
-@media screen and (min-width: 1200px){
-    #size5 {
-        display: block;
+    .info-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        'main main'
+        'left1 left2'
+        'left3 right1'
+        'right2 right3';
     }
 }
