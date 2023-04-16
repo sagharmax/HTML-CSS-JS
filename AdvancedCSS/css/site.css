@@ -1,85 +1,28 @@
-.info {
-    background-color: red;
-    font-size: 4rem;
-    color: white;
-    text-align: center;
-    border: 1px black solid;
+:root {
+    --brand-grey: rgb(197, 197, 197);
+    --brand-dark-grey: rgb(88, 88, 88);
+    --brand-blue: rgb(0, 107, 179);
+    --brand-light: rgb(255, 255, 255);
+    --important-text1: 1.5rem;
 }
 
-.main-info {
-    background-color: blue;
-    font-size: 4rem;
-    color: white;
-    text-align: center;
-    border: 1px black solid;
+#section1 {
+    background-color: var(--brand-grey);
 }
 
-/* .info-container {
-    display: grid;
-    grid-gap: 5px;
-    grid-template-columns: 1fr 2fr 1fr;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-} */
-
-.info-container {
-    display: grid;
-    grid-gap: 5px;
-    grid-template-columns: 100px 1fr 100px;
-    grid-template-areas: 
-    'left1 main right1'
-    'left2 main right2'
-    'left3 main right3';
+#section2 {
+    background-color: var(--brand-dark-grey);
+    color: var(--brand-light);
+    font-size: var(--important-text, 1.25rem);
 }
 
-#imain {
-    grid-area: main;
+#section3 {
+    color: var(--brand-blue);
 }
 
-#i1 {
-    grid-area: left1;
-}
-
-#i2 {
-    grid-area: left2;
-}
-
-#i3 {
-    grid-area: left3;
-}
-
-#i4 {
-    grid-area: right1;
-}
-
-#i5 {
-    grid-area: right2;
-}
-
-#i6 {
-    grid-area: right3;
-}
-
-@media screen and (max-width: 1000px) {
-    .info-container {
-        grid-template-columns: 1fr 100px;
-        grid-template-areas: 
-        'main left1'
-        'main left2'
-        'main left3'
-        'main right1'
-        'main right2'
-        'main right3';
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .info-container {
-        grid-template-columns: 1fr 1fr;
-        grid-template-areas: 
-        'main main'
-        'left1 left2'
-        'left3 right1'
-        'right2 right3';
-    }
+#button1 {
+    border: 0;
+    padding: 5px;
+    color: var(--brand-light);
+    background-color: var(--brand-dark-grey);
 }
