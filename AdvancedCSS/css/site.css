@@ -1,54 +1,16 @@
-#section1 {
-    background-color: lightblue;
+p {
+  color: #06336d;
 }
 
-header, footer {
-    background-color: darkblue;
-    color: white;
-    font-size: 3rem;
-    text-align: center;
+.container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
 }
-
-@media print {
-    *,
-    *::before,
-    *::after {
-        background: #fff !important;
-        color: #000 !important;
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
-
-    @page {
-        margin: 1in;
-        size: letter landscape;
-    }
-
-    a {
-        text-decoration: none;
-    }
-
-    a[href]::after {
-        content: " (" attr(href) ")";
-    }
-
-    /* body > *:not(main) {
-        display: none;
-    } */
-    header, footer {
-        display: none;
-    }
-
-    h2 {
-        page-break-before: always;
-    }
-
-    ol {
-        page-break-inside: avoid;
-    }
-
-    p {
-        orphans: 2; /* how many lines on the previous page */
-        widows: 2; /* how many lines on the next page */
-    }
+.container-item {
+  background-color: #06336d;
+  height: 100px;
+}
+.container-item p {
+  color: white;
 }
