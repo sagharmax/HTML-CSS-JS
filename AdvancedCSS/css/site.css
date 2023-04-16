@@ -1,28 +1,41 @@
-:root {
-    --brand-grey: rgb(197, 197, 197);
-    --brand-dark-grey: rgb(88, 88, 88);
-    --brand-blue: rgb(0, 107, 179);
-    --brand-light: rgb(255, 255, 255);
-    --important-text1: 1.5rem;
+/*
+pseudo-elements - :: - describe part of an element
+pseudo-classes - : - define the state of an element
+*/
+
+#first-list li:first-child {
+    font-size: 1.5rem;
 }
 
-#section1 {
-    background-color: var(--brand-grey);
+li:nth-child(2) {
+    font-size: 1.5rem;
 }
 
-#section2 {
-    background-color: var(--brand-dark-grey);
-    color: var(--brand-light);
-    font-size: var(--important-text, 1.25rem);
+li:last-child {
+    font-size: 1.5rem;
 }
 
-#section3 {
-    color: var(--brand-blue);
+h2:nth-of-type(2) {
+    color: red;
 }
 
-#button1 {
-    border: 0;
+#button1:hover {
+    background-color: rgb(116, 116, 116);
+    color: white;
+    border: 1px, black solid;
     padding: 5px;
-    color: var(--brand-light);
-    background-color: var(--brand-dark-grey);
+}
+
+#section1 p:first-of-type::first-letter {
+    color: blue;
+    font-weight: bold;
+}
+
+/* p::first-line {
+    color: blue;
+    font-weight: bold;
+} */
+
+p::first-letter {
+    font-size: 2rem;
 }
