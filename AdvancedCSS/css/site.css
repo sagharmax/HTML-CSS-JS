@@ -1,33 +1,51 @@
-.container {
-    display: flex; /* This is flex-box */
-    justify-content: space-evenly;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    /* flex-wrap: wrap-reverse; */
-    flex-direction: row;
-    /* flex-direction: row-reverse; */
+html {
+    color: black;
+    background-color: white;
+    font-size: 18px;
 }
 
-.item {
-    border: 1px black solid;
-    background-color: red;
-    color: white;
-    font-size: 2rem;
-    width: 100px;
-    height: 100px;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: auto;
+.size-heading {
+    font-size: 54px;
+    display: none;
 }
 
-/* #item1 {
-    order: 3;
+@media screen and (prefers-color-scheme: dark) {
+    html {
+        color: white;
+        background-color: black;
+    }
 }
 
-#item2 {
-    order: 2;
-} */
+@media screen and (max-width: 600px) {
+    html {
+        font-size: 24px;
+    }
 
-/* #item3 {
-    flex-shrink: 0;
-} */
+    #size1 {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 767px){
+    #size2 {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px){
+    #size3 {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px){
+    #size4 {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    #size5 {
+        display: block;
+    }
+}
