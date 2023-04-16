@@ -1,0 +1,23 @@
+@import "variables";
+.standard-grid(@gtc) {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: @gtc;
+}
+
+p {
+    color: @brand-color;
+}
+
+.container {
+    .standard-grid(repeat(3, 1fr));
+
+    &-item {
+        background-color: @brand-color;
+        height: 100px;
+
+        p {
+            color: white;
+        }
+    }
+}
