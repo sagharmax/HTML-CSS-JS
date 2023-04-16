@@ -1,41 +1,54 @@
-/*
-pseudo-elements - :: - describe part of an element
-pseudo-classes - : - define the state of an element
-*/
-
-#first-list li:first-child {
-    font-size: 1.5rem;
+#section1 {
+    background-color: lightblue;
 }
 
-li:nth-child(2) {
-    font-size: 1.5rem;
-}
-
-li:last-child {
-    font-size: 1.5rem;
-}
-
-h2:nth-of-type(2) {
-    color: red;
-}
-
-#button1:hover {
-    background-color: rgb(116, 116, 116);
+header, footer {
+    background-color: darkblue;
     color: white;
-    border: 1px, black solid;
-    padding: 5px;
+    font-size: 3rem;
+    text-align: center;
 }
 
-#section1 p:first-of-type::first-letter {
-    color: blue;
-    font-weight: bold;
-}
+@media print {
+    *,
+    *::before,
+    *::after {
+        background: #fff !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
 
-/* p::first-line {
-    color: blue;
-    font-weight: bold;
-} */
+    @page {
+        margin: 1in;
+        size: letter landscape;
+    }
 
-p::first-letter {
-    font-size: 2rem;
+    a {
+        text-decoration: none;
+    }
+
+    a[href]::after {
+        content: " (" attr(href) ")";
+    }
+
+    /* body > *:not(main) {
+        display: none;
+    } */
+    header, footer {
+        display: none;
+    }
+
+    h2 {
+        page-break-before: always;
+    }
+
+    ol {
+        page-break-inside: avoid;
+    }
+
+    p {
+        orphans: 2; /* how many lines on the previous page */
+        widows: 2; /* how many lines on the next page */
+    }
 }
