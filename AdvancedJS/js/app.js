@@ -8,7 +8,9 @@
         // pageItems.loadData.addEventListener('click', loadSimplePromiseData);
         // pageItems.loadData.addEventListener('click', loadChainedPromiseData);
         // pageItems.loadData.addEventListener('click', loadPromiseSetData);
-        pageItems.loadData.addEventListener('click', loadAsyncData);
+        // pageItems.loadData.addEventListener('click', loadAsyncData);
+        // pageItems.loadData.addEventListener('click', loadApiData);
+        pageItems.loadData.addEventListener('click', uploadDataToApi);
     }
 
     const pageItems = {};
@@ -118,6 +120,36 @@
         return new Promise(function(resolve, reject) {
             setTimeout(() => reject(message), 2000);
         });
+    }
+
+    function loadApiData(e) {
+        fetch('https://swapi.dev/api/people/1')
+        .then(response => {
+            console.log(response);
+            return response.json();
+        })
+        .then(data => console.log(data))
+        .catch(reason => console.error(reason));
+    }
+
+    function uploadDataToApi(e) {
+        const data = {
+            firstName: 'Saeid',
+            lastName: 'Ghasemi',
+            isAlive: true
+        };
+        fetch('https://webhook.site/#!/51d9b5a6-9d8c-47bd-a830-18ff2e234ca2', {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(
+            response => console.log(response),
+            reason => console.error(reason)
+        );
     }
 
     // LocalStorage OR SessionStorage
