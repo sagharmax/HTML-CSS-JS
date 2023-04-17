@@ -7,7 +7,8 @@
 
         // pageItems.loadData.addEventListener('click', loadSimplePromiseData);
         // pageItems.loadData.addEventListener('click', loadChainedPromiseData);
-        pageItems.loadData.addEventListener('click', loadPromiseSetData);
+        // pageItems.loadData.addEventListener('click', loadPromiseSetData);
+        pageItems.loadData.addEventListener('click', loadAsyncData);
     }
 
     const pageItems = {};
@@ -99,6 +100,24 @@
         Promise.any([promise1, promise2, promise3])
         .then(results => console.log(results))
         .catch(reason => console.error(reason))
+    }
+
+    async function loadAsyncData(e) {
+        try {
+            const results = await timingDemo('Promise #1');
+            console.log(results);
+            const results2 = await timingDemo('Promise #2');
+            console.log(results2);
+        } catch (error) {
+            console.log(`There was an error in ${error}`);
+        }
+        console.log('We are all done');
+    }
+
+    function timingDemo(message) {
+        return new Promise(function(resolve, reject) {
+            setTimeout(() => reject(message), 2000);
+        });
     }
 
     // LocalStorage OR SessionStorage
