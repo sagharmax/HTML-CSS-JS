@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>External Libraries Demo</title>
         <link rel="icon" href="favicon.ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
         <link rel="stylesheet" href="css/site.css">
     </head>
     <body>
@@ -23,32 +24,13 @@
             <div>
                 <ul id="taskList"></ul>
             </div>
-            <div>
-                <canvas id="myChart"></canvas>
-            </div>
         </main>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
         <script>
-            const ctx = document.getElementById('myChart');
-          
-            new Chart(ctx, {
-              type: 'bar',
-              data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                datasets: [{
-                  label: '# of Votes',
-                  data: [12, 19, 3, 5, 2, 3],
-                  borderWidth: 1
-                }]
-              },
-              options: {
-                scales: {
-                  y: {
-                    beginAtZero: true
-                  }
-                }
-              }
+            $('#taskForm').submit(function(e) {
+                toastr.error("This is asample of error");
             });
-          </script>
+        </script>
     </body>
 </html>
