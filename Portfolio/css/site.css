@@ -1,0 +1,123 @@
+  @import url('https://fonts.googleapis.com/css2?family=Kreon:wght@700&family=Nunito+Sans:ital,wght@0,300;1,300&family=Quicksand:wght@300;700&display=swap');
+
+  html {
+    font-family: 'Quicksand', 'sand-sarif';
+    font-weight: 300;
+    font-size: 36px;
+  }
+
+  body {
+    max-width: 1440px;
+    margin: auto;
+  }
+
+  h1 {
+    font-weight: 700;
+    color: #fff;
+    font-size: 4rem;
+    text-transform: uppercase;
+    text-align: right;
+  }
+
+  h2 {
+    font-weight: 700;
+    color: #000;
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  p {
+    line-height: 1.5rem;
+  }
+
+  form {
+    padding: 0 15%;
+    display: grid;
+    grid-template-columns: auto;
+  }
+
+  form > div {
+    display: flex;
+    justify-content: center;
+  }
+
+  input, textarea {
+    font-size: 1rem;;
+  }
+
+  button {
+    font-size: 0.75rem;
+    padding: 0.25rem 5%;
+    margin: 0.25rem;
+  }
+
+  header {
+    background-color: #000;
+    color: #fff;
+    font-size: 0.67rem;
+    text-align: right;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  footer {
+    background-color: #000;
+    color: #fff;
+    font-size: 0.67rem;
+    text-align: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .hero {
+    position: relative;
+  }
+
+  .hero img {
+    width: 100%;
+  }
+
+  .hero h1 {
+    position: absolute;
+    bottom: 0;
+    right: 1rem;
+  }
+
+  #contact-me h2 {
+    margin: 0;
+    text-align: center;
+  }
+
+  #portfolio-section {
+    position: relative;
+  }
+
+  #portfolio-section img {
+    width: 100%;
+  }
+
+#portfolio-section > div {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+}
+
+#portfolio-section > div > h2 {
+    color: #fff;
+    margin: 0;
+}
+
+#portfolio-section > div > a {
+    color: #d8b33c;
+    font-size: 2rem;
+    margin: 0;
+}
+
+#my-story {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+ #my-story h2 {
+    margin: 1rem 0;
+ }
