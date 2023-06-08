@@ -174,3 +174,26 @@
  .highlight > img {
     max-width: 50%;
  }
+
+ #work-item-header {
+    margin: 0;
+    text-align: center;
+ }
+
+ #work-item-image {
+    width: 100%;
+    margin-bottom: 1rem;;
+ }
+
+ .work-item-text {
+    padding: 0.3rem 15%;
+ }
+
+ .work-item-text h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+ }
+
+ .work-item-text p, .work-item-text ul {
+    margin: 0;
+ }
