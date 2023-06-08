@@ -9,6 +9,11 @@
   body {
     max-width: 1440px;
     margin: auto;
+    background-color: rgba(0, 0, 0, 0.034)
+  }
+
+  main {
+    background-color: #fff;
   }
 
   h1 {
@@ -24,6 +29,21 @@
     color: #000;
     font-size: 2rem;
     text-transform: uppercase;
+  }
+
+  nav ul {
+    margin: o;
+  }
+
+  nav ul li {
+    list-style: none;
+    display: inline-block;
+    padding-right: 0.5rem;
+  }
+
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
   }
 
   p {
@@ -120,4 +140,37 @@
 
  #my-story h2 {
     margin: 1rem 0;
+ }
+
+ #portfolio-main {
+    margin-top: 0.05rem;
+    margin-bottom: 0.05rem;
+ }
+
+ .highlight {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: #000;
+ }
+
+ .highlight h2 {
+    color: #fff;
+ }
+
+ .highlight a {
+    color: #d8b33c;
+    font-size: 2rem;
+ }
+
+ .highlight.invert {
+    flex-direction: row-reverse;
+ }
+
+ .highlight > div {
+    flex-grow: 1;
+ }
+
+ .highlight > img {
+    max-width: 50%;
  }
